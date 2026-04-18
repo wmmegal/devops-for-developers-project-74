@@ -1,5 +1,2 @@
 .idea
 app/node_modules
-app/.cache
-app/.github
-app/.npm
