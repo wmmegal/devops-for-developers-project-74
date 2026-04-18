@@ -1,6 +1,9 @@
 services:
   app:
-    build: .
+    image: wmmegal/devops-for-developers-project-74
+    build:
+      context: .
+      dockerfile: Dockerfile.production
     command: ["make", "test"]
     ports:
       - "8080:8080"
