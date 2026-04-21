@@ -1,8 +1,5 @@
 services:
   app:
-    extends:
-      file: docker-compose.yml
-      service: app
     build: .
     command: ['make', 'dev']
     volumes:
