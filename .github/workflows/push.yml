@@ -41,5 +41,5 @@ jobs:
       -
         name: Check
         run: |
-          docker-compose run --rm app make setup
-          docker-compose -f docker-compose.yml up --abort-on-container-exit --exit-code-from app
+          make setup
+          make ci
