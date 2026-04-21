@@ -1,8 +1,20 @@
 services:
   app:
+    extends:
+      file: docker-compose.yml
+      service: app
     build: .
-    command: ["make", "dev"]
-    ports:
-      - "8080:8080"
+    command: ['make', 'dev']
     volumes:
       - ./app:/app
+    environment:
+      NODE_ENV: development
+  caddy:
+    image: caddy:latest
+    ports:
+      - "80:80"
+      - "443:443"
+    depends_on:
+      - app
+    volumes:
+      - ./services/caddy:/etc/caddy
